@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+    /* padding: 50px; */
+    /* background: blue; */
+    /* background-color: brown; */
+  }
+  
+  #currtime {
+    color: antiquewhite;
+    font-size: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  
+  #currdate {
+    color: aliceblue;
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+.stime {
+  font-size: 65px;
+}
+
+.sname {
+  font-size: 50px;
+  font: bold;
+  color: floralwhite;
+
+}
+
+.container-fluid {
+  background-color: chocolate;
+  padding-bottom: 80px;
+}
+
+.wrap {
+  border: 2px solid gainsboro;
+}
