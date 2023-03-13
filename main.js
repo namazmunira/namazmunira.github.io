@@ -16,11 +16,6 @@ function updateDatetime() {
 // Обновляем время каждую секунду
 setInterval(updateDatetime, 1000);
 
-// var f = Yanvar();
-
-
-var February = '';
-
 var month = moment().format("MMM");
 
 var datas;
@@ -72,11 +67,6 @@ console.log(month); // March
 var stimes = JSON.parse(datas);
 
 
-// var firstDate = Object.keys(stimes)[0];
-// var firstTimes = stimes[firstDate];
-//console.log(firstDate); 
-
-
 var DayinMonth = moment().format('L'); 
 // var dateStr = '03/05/2023';
 
@@ -124,6 +114,70 @@ var isha = TimeSalat[5];
 salatIsha.innerHTML = isha;
 
 
-// stimes.forEach(element => {
-//   console.log(element);
-// });
+const nextPrayerTime = asr;
+
+if(time2 === asr){
+  nextPrayerTime = magrib;
+
+}
+
+if(time2 === magrib){
+  nextPrayerTime = isha;
+
+}
+
+if(time2 === isha){
+  nextPrayerTime = fajr;
+
+}
+
+if(time2 === fajr){
+  nextPrayerTime = zuhr;
+
+}
+
+if(time2 === zuhr){
+  nextPrayerTime = asr;
+
+}
+
+// Получаем время следующего намаза
+
+// Создаем объект Moment с текущей датой и временем
+let now = moment();
+
+// Задаем время следующего намаза в текущую дату
+let nextPrayerDateTime = moment(`${now.format('YYYY-MM-DD')} ${nextPrayerTime}`);
+
+// Если текущее время больше времени следующего намаза, то следующий намаз будет завтра
+if (now.isAfter(nextPrayerDateTime)) {
+  nextPrayerDateTime = moment(`${now.add(1, 'days').format('YYYY-MM-DD')} ${nextPrayerTime}`);
+}
+
+// Получаем разницу во времени между текущим временем и временем следующего намаза
+const duration = moment.duration(nextPrayerDateTime.diff(now));
+
+// Получаем элемент на странице, в который будем выводить таймер
+const countdownEl = document.getElementById('countdown');
+
+// Функция для обновления значения таймера каждую секунду
+const updateCountdown = () => {
+  // Пересчитываем разницу во времени между текущим временем и временем следующего намаза
+  const duration = moment.duration(nextPrayerDateTime.diff(moment()));
+
+  // Обновляем значение таймера на странице
+  countdownEl.textContent = `${Math.floor(duration.asHours())} ч ${duration.minutes()} мин ${duration.seconds()} сек`;
+  
+  // Если разница во времени меньше или равна нулю, останавливаем таймер
+  if (duration <= 0) {
+    clearInterval(intervalId);
+    countdownEl.textContent = 'Время для следующего намаза';
+  }
+};
+
+// Обновляем значение таймера в первый раз
+updateCountdown();
+
+// Запускаем функцию обновления значения таймера каждую секунду
+const intervalId = setInterval(updateCountdown, 1000);
+
