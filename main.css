@@ -31,15 +31,21 @@ body {
 .sname {
   font-size: 50px;
   font: bold;
-  color: floralwhite;
+  color: #006eb9;
 
 }
 
+.hero{
+  background-color: #006eb9;
+  padding-bottom: 70px;
+}
+
 .container-fluid {
-  background-color: chocolate;
+  /* background-color: #006eb9; */
   padding-bottom: 180px;
 }
 
 .wrap {
-  border: 2px solid gainsboro;
+  /* border: 2px solid gainsboro;
+  color: #006eb9; */
 }
