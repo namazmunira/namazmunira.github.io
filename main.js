@@ -1,4 +1,3 @@
-// import {Yanvar} from "yanvar.js";
 
 var timeElement = document.getElementById('currtime');
 var dateElement = document.getElementById('currdate');
@@ -8,7 +7,7 @@ function updateDatetime() {
   
   var formattedTime = now.format('HH:mm:ss');
   var formattedDate = now.format('DD.MM.YYYY');
-  //now.format('LTS');
+  
   timeElement.innerHTML = formattedTime;
   dateElement.innerHTML = formattedDate;
 }
@@ -63,7 +62,7 @@ switch (month) {
 
 }
 
-console.log(month); // March
+// console.log(month); // March
 var stimes = JSON.parse(datas);
 
 
@@ -72,20 +71,20 @@ var DayinMonth = moment().format('L');
 
 var dateParts = DayinMonth.split('/'); // разделяем дату на части по разделителю '/'
 var formattedDate = dateParts[1] + '.' + dateParts[0]; // форматируем дату в нужный формат
-console.log(formattedDate); // Curr Day: 10.03
+// console.log(formattedDate); // Curr Day: 10.03
 
 
 var time2 = moment().format('HH:mm'); 
-console.log(time2); // Curr Time 22:00
+// console.log(time2); // Curr Time 22:00
 
 
 var TimeSalat = stimes[formattedDate];
 var currTime = Object.keys(TimeSalat)[0];
 
 
-console.log(TimeSalat)
-// console.log(currTime);
-console.log(fajr);
+// console.log(TimeSalat)
+// // console.log(currTime);
+// console.log(fajr);
 
 
 var salatFajr = document.getElementById('fajr');
@@ -114,40 +113,41 @@ var isha = TimeSalat[5];
 salatIsha.innerHTML = isha;
 
 
-const nextPrayerTime = asr;
-
-if(time2 === asr){
-  nextPrayerTime = magrib;
-
-}
-
-if(time2 === magrib){
-  nextPrayerTime = isha;
-
-}
-
-if(time2 === isha){
-  nextPrayerTime = fajr;
-
-}
-
-if(time2 === fajr){
-  nextPrayerTime = zuhr;
-
-}
-
-if(time2 === zuhr){
-  nextPrayerTime = asr;
-
-}
-
-// Получаем время следующего намаза
 
 // Создаем объект Moment с текущей датой и временем
 let now = moment();
 
+// Массив времен намазов
+var prayerTimes = [
+  moment(fajr, 'HH:mm'), // Fajr
+  moment(zuhr, 'HH:mm'), // Dhuhr
+  moment(asr, 'HH:mm'), // Asr
+  moment(magrib, 'HH:mm'), // Maghrib
+  moment(isha, 'HH:mm')  // Isha
+];
+
+// Функция для поиска следующего намаза
+function getNextPrayerTime() {
+  var nextPrayerTime = null;
+
+  // Проходим по всем временам намазов
+  for (var i = 0; i < prayerTimes.length; i++) {
+    var prayerTime = prayerTimes[i];
+
+    // Если время намаза больше текущего времени, то это следующий намаз
+    if (prayerTime.isAfter(now)) {
+      nextPrayerTime = prayerTime;
+      break;
+    }
+  }
+
+  return nextPrayerTime;
+}
+
+//var nextPrayerTime = getNextPrayerTime();
+
 // Задаем время следующего намаза в текущую дату
-let nextPrayerDateTime = moment(`${now.format('YYYY-MM-DD')} ${nextPrayerTime}`);
+let nextPrayerDateTime = getNextPrayerTime();
 
 // Если текущее время больше времени следующего намаза, то следующий намаз будет завтра
 if (now.isAfter(nextPrayerDateTime)) {
