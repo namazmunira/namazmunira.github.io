@@ -273,6 +273,7 @@ const updateCountdown = () => {
   //   clearInterval(intervalId);
   //   countdownEl.textContent = 'Время для следующего намаза';
   // }
+ 
 };
 
 // Обновляем значение таймера в первый раз
