@@ -344,9 +344,9 @@ var dateParts = DayinMonth.split('/'); // разделяем дату на ча�
 var formattedDate = dateParts[1] + '.' + dateParts[0]; // форматируем дату в нужный формат
 var prayerTimes = updateDatePrayer(formattedDate);
 
-function updateDatePrayer(formattedDate){
+function updateDatePrayer(date){
 var stimes = datas;
-TimeSalat = stimes[formattedDate];
+TimeSalat = stimes[date];
 var currTime = Object.keys(TimeSalat)[0];
 var salatFajr = document.getElementById('fajr');
 var fajr = TimeSalat[currTime];
@@ -392,41 +392,47 @@ function getNextPrayerTime(prayerTimes) {
     if (prayerTime.isAfter(now)) {
       nextPrayerTime = prayerTime;
       break;
+
     }
-  }
-  
-  if (prayerTime === null) {
-    var tomorrowDate = moment().add(1, 'day'); // Получаем следующий день
-    var tomorrowFormattedDate = tomorrowDate.format('DD.MM');
-    prayerTimes = updateDatePrayer(tomorrowFormattedDate);
 }
 return nextPrayerTime;
-
 }
 
 // Получаем элемент на странице, в который будем выводить таймер
 let countdownEl = document.getElementById('countdown');
-
+let na = document.getElementById('nam')
 let updateCountdown = () => {
   // Проверяем, если nextPrayerTime равно null, прекращаем выполнение функции
   if (nextPrayerTime === null) {
       // Получаем текущее время
   let currentTime = moment().format('HH:mm:ss');
   // Проверяем, если время равно 00:00:00, обновляем страницу
-  if (currentTime === '00:00:00') {
-      updateCountdown();
+  if (currentTime === '23:59:59') {
+      na.innerHTML ="До следущего намаза: "
       document.location.reload(true);
+  }
+  else if (currentTime !=='00:00:00' ){
+    na.innerHTML="«Два ракаата утреннего намаза лучше, чем весь мир и то, что в нём!» (Муслим)";
   }  
    return
   }
+
   else if(nextPrayerTime !==null){
+    let currentTime = moment().format('HH:mm:ss');
+    // Проверяем, если время равно 00:00:00, обновляем страницу
+    if (currentTime === '00:00:01') {
+        na.innerHTML ="До следущего намаза: "
+    }
     var duration = moment.duration(nextPrayerTime.diff(moment()));
     // Пересчитываем разницу во времени между текущим временем и временем следующего намаза
   }
+
   // Проверяем, если разница отрицательна, устанавливаем значение таймера на 0
   if (duration.asMilliseconds() < 0) {
     // Сохраняем положение прокрут0ки перед обновлением страницы
+    updateCountdown();
     document.location.reload(true);
+
   }
   // Обновляем значение таймера на странице
   countdownEl.textContent = `${Math.floor(duration.asHours())} ч ${duration.minutes()} мин ${duration.seconds()} сек`;
