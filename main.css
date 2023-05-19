@@ -7,15 +7,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  
   font-size: 24px;
   text-align: center;
   margin: 0;
-  /* padding: 50px; */
-  /* background: blue; */
-  /* background-color: brown; */
-  /* background-image: url("./munira-fon.jpg") no-repeat center center fixed; */
-  /* background-repeat: no-repeat, repeat; */
   background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 
 }
@@ -25,8 +19,6 @@ right: 0;
 bottom: 0;
 min-width: 100%;
 min-height: 100%;
-width: auto;
-height: auto;
 z-index: -9999;
 }
 
@@ -56,17 +48,7 @@ z-index: -9999;
 }
 
 
-@keyframes pulse {
-  0% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.05);
-  }
-  100% {
-      transform: scale(1);
-  }
-}
+
 
 
 
@@ -88,7 +70,7 @@ z-index: -9999;
   margin-bottom: 20px;
   margin-top: 50px;
   text-transform: uppercase;
-  animation: pulse 2s infinite;
+  
   text-shadow: 3px 3px 3px black;
 
 
@@ -116,19 +98,16 @@ color: #006eb9;
 
 }
 
-/*.hero{
-background-image: scr("https://svgsilh.com/svg/1093502.svg");
-opacity: 1;
-background-size: cover;
-padding-bottom: 70px;
-}*/
+
 
 .container-fluid {
-/* background-color: #006eb9; */
 padding-bottom: 180px;
 }
 
 .card-img-top{
 width: 100px;
-height: 150px;
+height: 200px;
+}
+.col{
+  margin-bottom: 50px;
 }
