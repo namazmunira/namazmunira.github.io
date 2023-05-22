@@ -7,8 +7,6 @@ function redirectToMainPage() {
   }
 }
 
-
-
 function handleOnlineEvent() {
   console.log("Интернет-соединение восстановлено.");
   redirectToMainPage();
