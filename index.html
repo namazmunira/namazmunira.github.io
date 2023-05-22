@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-<<<<<<< HEAD
 
 <head>
   <title>Время намазов</title>
@@ -11,105 +10,95 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-=======
-  <head>
-    <title>Время намазов</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  </head>
-  <body>
->>>>>>> parent of 0d6aee4 (refactoring)
 
- 
+<body>
   <div class="container-fluid">
     <div class="row text-center hero">
       <div id="currtime"></div>
       <div id="currdate"></div>
-<<<<<<< HEAD
-      <div class="namaz">До следущего намаза: 
-=======
-      <div class="namaz" id ="nam">До следущего намаза: 
->>>>>>> parent of 0d6aee4 (refactoring)
+      <div class="namaz" id="nam">До следущего намаза:
         <div id="countdown"></div>
       </div>
-
     </div>
+    <div class="row row-cols-1 row-cols-md-6 g-1 ">
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">ФАДЖР</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="fajr"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">ВОСХОД</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="vosxod"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">ЗУХР</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="zuhr"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">АСР</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="asr"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">МАГРИБ</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="magrib"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
+          <img src="fon.png" class="card-img-top" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="sname">ИША</h5>
+            <hr>
+            <h3>
+              <p class="stime" id="isha"></p>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="row row-cols-1 row-cols-md-6 g-1 ">
-  <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">ФАДЖР</h5>
-    <hr>
-  <h3>  <p class="stime" id="fajr"></p></h3>
-  </div>
-</div>
-  </div>
-   <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">ВОСХОД</h5>
-  <hr>
-  <h3><p class="stime" id="vosxod"></p></h3>
-  </div>
-</div>
-  </div>
-   <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">ЗУХР</h5>
-    <hr>
-  <h3>  <p class="stime" id="zuhr"></p></h3>
-  </div>
-</div>
-  </div>
-   <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">АСР</h5>
-  <hr>
-  <h3><p class="stime" id="asr"></p></h3>
-  </div>
-</div>
-  </div>
-   <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">МАГРИБ</h5>
-   <hr>
-  <h3>  <p class="stime" id="magrib"></p></h3>
-  </div>
-</div>
-  </div>
-  <div class="col">
-    <div class="card text-center text-dark shadow bg-body-tertiary rounded ">
-  <img src="fon.png" class="card-img-top" alt="...">
-  <div class="card-img-overlay">
-    <h5 class="sname">ИША</h5>
-   <hr>
-  <h3>  <p class="stime" id="isha"></p></h3>
-  </div>
-</div>
-  </div>
-</div>
-</div>
-
-<img src="111.jpg"  class="bgvideo" id="bgvideo">
-<<<<<<< HEAD
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-=======
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
->>>>>>> parent of 0d6aee4 (refactoring)
-<script src="main.js"></script>
+  <img src="111.jpg" class="bgvideo" id="bgvideo">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
-
-
