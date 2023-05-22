@@ -42,13 +42,8 @@ body {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-<<<<<<< Updated upstream
   /* transition: color 0.5s ease-in-out;
       animation: slide 2s infinite; */
-=======
-  transition: color 0.5s ease-in-out;
-  animation: slide 2s infinite;
->>>>>>> Stashed changes
 }
 
 .namaz {
@@ -67,10 +62,6 @@ body {
   margin-top: 50px;
   text-transform: uppercase;
   text-shadow: 3px 3px 3px black;
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 }
 
 #currdate {
