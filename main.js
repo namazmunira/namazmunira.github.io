@@ -400,9 +400,12 @@ function getNextPrayerTime(prayerTimes) {
         'date': tomorrow.date()
       });
     }
-
 return nextPrayerTime;
 }
+
+
+
+
 let countdownEl = document.getElementById('countdown');
 var prayerTimes = updateDatePrayer(formattedDate);
 
