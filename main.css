@@ -1,5 +1,4 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,18 +9,18 @@ body {
   font-size: 24px;
   text-align: center;
   margin: 0;
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
 
 }
+
 .bgvideo {
-position: fixed;
-right: 0;
-bottom: 0;
-min-width: 100%;
-min-height: 100%;
-z-index: -9999;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -9999;
 }
-
 
 #currtime-section {
   background-color: #F5F5F5;
@@ -29,12 +28,12 @@ z-index: -9999;
 }
 
 #currtime {
- color: antiquewhite;
+  color: antiquewhite;
   font-size: 10vw;
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 50px;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   text-shadow: 3px 3px 3px black;
 }
 
@@ -43,39 +42,27 @@ z-index: -9999;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  transition: color 0.5s ease-in-out;
-      animation: slide 2s infinite;
+  /* transition: color 0.5s ease-in-out;
+      animation: slide 2s infinite; */
 }
 
-
-
-
-
-
-.namaz{
+.namaz {
   color: aliceblue;
   font-size: 80px;
   font-weight: bold;
   margin-bottom: 20px;
   text-shadow: 3px 3px 3px black;
-
 }
 
-
-
-#countdown{
- color: mistyrose;
+#countdown {
+  color: mistyrose;
   font-size: 7vw;
   font-weight: bold;
   margin-bottom: 20px;
   margin-top: 50px;
   text-transform: uppercase;
-  
   text-shadow: 3px 3px 3px black;
-
-
 }
-
 
 #currdate {
   color: aliceblue;
@@ -86,28 +73,25 @@ z-index: -9999;
 }
 
 .stime {
-font-size: 50px;
-    text-transform: unset;
+  font-size: 50px;
+  text-transform: unset;
 }
 
 .sname {
-font-size: 25px;
-font: bold;
-color: #006eb9;
-
-
+  font-size: 25px;
+  font: bold;
+  color: #006eb9;
 }
-
-
 
 .container-fluid {
-padding-bottom: 180px;
+  padding-bottom: 180px;
 }
 
-.card-img-top{
-width: 100px;
-height: 200px;
+.card-img-top {
+  width: 100px;
+  height: 200px;
 }
-.col{
+
+.col {
   margin-bottom: 50px;
 }
