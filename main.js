@@ -129,7 +129,7 @@ switch (month) {
       "17.05": ["03:32","05:02","13:30","19:00","21:25","22:55"],
       "18.05": ["03:30","05:00","13:30","19:02","21:27","22:57"],
       "19.05": ["03:29","04:59","13:30","19:04","21:28","22:58"],
-      "20.05": ["03:27","04:57","13:30","19:06","21:30","23:00"],
+      "20.05": ["03:27","04:57","13:30","19:06","23:52","23:53"],
       "21.05": ["03:25","04:55","13:30","19:08","21:32","23:02"],
       "22.05": ["03:23","04:53","13:30","19:09","21:34","23:04"],
       "23.05": ["03:21","04:51","13:30","19:11","21:35","23:05"],
@@ -142,7 +142,6 @@ switch (month) {
       "30.05": ["03:09","04:39","13:30","19:21","21:48","23:18"],
       "31.05": ["03:08","04:38","13:30","19:23","21:49","23:19"]
       };
-
     break;
   case "Jun":
     datas = '{"01.06":["03:12","04:42","13:30","19:23","22:02","23:32"],"02.06":["03:11","04:41","13:30","19:23","22:05","23:35"],"03.06":["03:10","04:40","13:30","19:24","22:06","23:36"],"04.06":["03:09","04:39","13:30","19:24","22:08","23:38"],"05.06":["03:08","04:38","13:30","19:24","22:10","23:40"],"06.06":["03:08","04:38","13:30","19:25","22:11","23:41"],"07.06":["03:07","04:37","13:30","19:25","22:12","23:42"],"08.06":["03:07","04:37","13:30","19:25","22:13","23:43"],"09.06":["03:06","04:36","13:30","19:26","22:14","23:44"],"10.06":["03:05","04:35","13:30","19:26","22:15","23:45"],"11.06":["03:05","04:35","13:30","19:27","22:16","23:46"],"12.06":["03:04","04:34","13:30","19:27","22:16","23:46"],"13.06":["03:04","04:34","13:30","19:28","22:17","23:47"],"14.06":["03:03","04:33","13:30","19:28","22:18","23:48"],"15.06":["03:03","04:33","13:30","19:29","22:19","23:49"],"16.06":["03:03","04:33","13:30","19:29","22:19","23:49"],"17.06":["03:03","04:33","13:30","19:29","22:19","23:49"],"18.06":["03:03","04:33","13:30","19:30","22:20","23:50"],"19.06":["03:03","04:33","13:30","19:30","22:20","23:50"],"20.06":["03:03","04:33","13:30","19:31","22:21","23:51"],"21.06":["03:03","04:33","13:30","19:31","22:21","23:51"],"22.06":["03:03","04:33","13:30","19:31","22:21","23:51"],"23.06":["03:04","04:34","13:30","19:32","22:22","23:52"],"24.06":["03:04","04:34","13:30","19:32","22:22","23:52"],"25.06":["03:04","04:34","13:30","19:32","22:22","23:52"],"26.06":["03:04","04:34","13:30","19:32","22:22","23:52"],"27.06":["03:05","04:35","13:30","19:32","22:22","23:52"],"28.06":["03:06","04:36","13:30","19:31","22:21","23:51"],"29.06":["03:07","04:37","13:30","19:31","22:21","23:51"],"30.06":["03:07","04:37","13:30","19:31","22:21","23:51"]}';
@@ -337,16 +336,14 @@ function checkAndUpdateText() {
     updateText();
   }
 }
-
-let TimeSalat; 
+//
 var DayinMonth = moment().format('L'); 
 var dateParts = DayinMonth.split('/'); // разделяем дату на части по разделителю '/'
-var formattedDate = dateParts[1] + '.' + dateParts[0]; // форматируем дату в нужный формат
-var prayerTimes = updateDatePrayer(formattedDate);
+let formattedDate = dateParts[1] + '.' + dateParts[0]; // форматируем дату в нужный формат
 
-function updateDatePrayer(formattedDate){
+function updateDatePrayer(date){
 var stimes = datas;
-TimeSalat = stimes[formattedDate];
+let TimeSalat = stimes[date];
 var currTime = Object.keys(TimeSalat)[0];
 var salatFajr = document.getElementById('fajr');
 var fajr = TimeSalat[currTime];
@@ -378,12 +375,11 @@ prayerTimes = [
 return prayerTimes;
 }
 
-let nextPrayerTime = getNextPrayerTime(prayerTimes);
 
 function getNextPrayerTime(prayerTimes) {
   var now = moment(); // Получаем текущее время
-  
   var nextPrayerTime = null;
+  var isAll = true;
   // Проходим по всем временам намазов
   for (var i = 0; i < prayerTimes.length; i++) {
     var prayerTime = prayerTimes[i];
@@ -391,47 +387,97 @@ function getNextPrayerTime(prayerTimes) {
     // Если время намаза больше текущего времени, то это следующий намаз
     if (prayerTime.isAfter(now)) {
       nextPrayerTime = prayerTime;
+      isAll = false;
       break;
     }
+   
   }
-  
-  if (prayerTime === null) {
-    var tomorrowDate = moment().add(1, 'day'); // Получаем следующий день
-    var tomorrowFormattedDate = tomorrowDate.format('DD.MM');
-    prayerTimes = updateDatePrayer(tomorrowFormattedDate);
-}
+    if (isAll) {
+      var tomorrow = moment().add(0, 'day').startOf('day');
+      nextPrayerTime = moment(prayerTimes[0]).set({
+        'year': tomorrow.year(),
+        'month': tomorrow.month(),
+        'date': tomorrow.date()
+      });
+    }
 return nextPrayerTime;
-
 }
 
-// Получаем элемент на странице, в который будем выводить таймер
+
+
+
 let countdownEl = document.getElementById('countdown');
+var prayerTimes = updateDatePrayer(formattedDate);
 
 let updateCountdown = () => {
-  // Проверяем, если nextPrayerTime равно null, прекращаем выполнение функции
+let nextPrayerTime = getNextPrayerTime(prayerTimes);
   if (nextPrayerTime === null) {
-      // Получаем текущее время
-  let currentTime = moment().format('HH:mm:ss');
-  // Проверяем, если время равно 00:00:00, обновляем страницу
-  if (currentTime === '00:00:00') {
-      updateCountdown();
-      document.location.reload(true);
+  
+    return;
   }  
-   return
+  else if (nextPrayerTime !== null) {
+    let currentTime = new Date();
+    let currentHours = currentTime.getHours();
+    let currentMinutes = currentTime.getMinutes();
+    let currentSeconds = currentTime.getSeconds();
+    let currentTimeString = `${currentHours}:${currentMinutes}:${currentSeconds}`;
+
+    let nextPrayerDate;
+    if (nextPrayerTime instanceof Date) {
+      nextPrayerDate = nextPrayerTime;
+    } else {
+      nextPrayerDate = new Date(nextPrayerTime);
+    }
+
+    if (currentHours > nextPrayerDate.getHours() || (currentHours === nextPrayerDate.getHours() && currentMinutes > nextPrayerDate.getMinutes())) {
+      // Если текущее время больше времени следующего намаза, устанавливаем следующее время намаза на завтра
+      nextPrayerDate.setDate(nextPrayerDate.getDate() + 1); // Добавляем один день
+    }
+
+    let duration = nextPrayerDate - currentTime;
+    duration = Math.max(0, duration); // Убеждаемся, что продолжительность не отрицательная
+
+    let hours = Math.floor(duration / (1000 * 60 * 60));
+    let minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((duration % (1000 * 60)) / 1000);
+
+    countdownEl.textContent = `${hours} ч ${minutes} мин ${seconds} сек`;
   }
-  else if(nextPrayerTime !==null){
-    var duration = moment.duration(nextPrayerTime.diff(moment()));
-    // Пересчитываем разницу во времени между текущим временем и временем следующего намаза
-  }
-  // Проверяем, если разница отрицательна, устанавливаем значение таймера на 0
-  if (duration.asMilliseconds() < 0) {
-    // Сохраняем положение прокрут0ки перед обновлением страницы
-    document.location.reload(true);
-  }
-  // Обновляем значение таймера на странице
-  countdownEl.textContent = `${Math.floor(duration.asHours())} ч ${duration.minutes()} мин ${duration.seconds()} сек`;
 };
-// Обновляем значение таймера в первый раз
+
 updateCountdown();
-// Запускаем функцию обновления значения таймера каждую секунду
+
 let intervalId = setInterval(updateCountdown, 1000);
+
+
+var redirecting = false;
+
+
+
+function redirectToNoInternetPage() {
+  if (!redirecting) {
+    redirecting = true;
+    window.location.href = "no-internet.html";
+  }
+}
+
+
+
+function handleOfflineEvent() {
+  console.log("Интернет-соединение потеряно.");
+  redirectToNoInternetPage();
+}
+
+function checkInternetConnection() {
+  if (window.navigator.onLine) {
+    return;
+  } else {
+    handleOfflineEvent();
+  }
+}
+
+
+window.addEventListener("offline", checkInternetConnection);
+
+checkInternetConnection();
+
