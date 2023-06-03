@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+
+
+a { 
+  text-decoration: none; /* Отменяем подчеркивание у ссылки */
+} 
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  /* background-color: #000000;
+  color: #F5F5F5; */
+
+}
+
+.bgvideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -9999;
+}
+
+#currtime-section {
+  background-color: #F5F5F5;
+  padding: 50px;
+}
+
+#currtime {
+  color: antiquewhite;
+  font-size: 10vw;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px black;
+}
+
+#currtime-label {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  /* transition: color 0.5s ease-in-out;
+      animation: slide 2s infinite; */
+}
+
+.namaz {
+  color: aliceblue;
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px black;
+}
+
+#countdown {
+  color: mistyrose;
+  font-size: 7vw;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 3px black;
+}
+
+#currdate {
+  color: aliceblue;
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px black;
+}
+
+.stime {
+  font-size: 90px;
+  text-transform: unset;
+}
+
+.sname {
+  font-size: 25px;
+  font: bold;
+  color: #006eb9;
+}
+
+.container-fluid {
+  padding-bottom: 180px;
+}
+
+.card-img-top {
+  width: 100px;
+  height: 200px;
+}
+
+.col {
+  margin-bottom: 50px;
+}
+
+/* city page */
+
+.cities {
+  font-size: 30px;
+}
+
+.city {
+    background-color: #3bad59;
+}
+
+.txt_city{
+  font-size: 110px;
+}
+
+.btn_city {
+  font-size: 90px;
+}
+
+
+/*  ---- new styles --- */
+
+/* @font-face {
+  font-family: "Comfortaa Regular";
+  src: url("../fonts/Comfortaa-Regular.ttf");
+} */
+
+.side_left{
+  background-color: #F5F5F5;
+  color: #ffffff;
+}
+
+.side_right{
+  background-color: #124658;
+}
+
+.prayer_card {
+  /* border: #080808 1px; */
+  margin: 10px 0 0 10px;
+  background-color: #184b5de5;
+  border-radius: 20px 0 0 0;
+}
+
+.prayer_name {
+  font-size: 60px;
+}
+
+.rasp_title{
+  color: #184B5D;
+  font-size: 60px;
+}
+
+.icon_time{
+  font-size: 50px;
+  /* margin: 0 15px 0 0; */
+  text-align: start;
+}
