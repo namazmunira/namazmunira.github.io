@@ -17,6 +17,17 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-6 side_left">
+        <div class="row city_block">
+            <div class="col-6 city_name_select">
+                <strong>Выбирайте город:</strong>
+            </div>
+            <div class="col-6">
+                <select class="form-select mt-3" id="city" style="font-size: 20px;">
+                    <option value="Кемерово" selected>Кемерово</option>
+                    <option value="Новокузнецк">Новокузнецк</option>
+                  </select>
+            </div>
+        </div>
         <div class="row">
             <div class="rasp_title">
                 Время намазов
@@ -86,17 +97,23 @@
       </div>
       <div class="col-6 side_right">
         <div class="row">
-            <div class="col">
+            <div>
                 <div id="currtime"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div>
+                <i class="fa fa-map-marker local" aria-hidden="true"></i>
+                <div class="city_name" id="selectedCity"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div>
                 <div id="currdate"></div>
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div>
                 <div class="namaz" id="nam">До следущего намаза:
                     <div id="countdown"></div>
                 </div>

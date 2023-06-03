@@ -21,8 +21,34 @@ setInterval(updateDatetime, 1000);
 
 var month = moment().format("MMM");
 
+
+// Получаем элементы select
+var selectElement = document.getElementById("city");
+var textElement = document.getElementById("selectedCity");
+
+textElement.textContent = "Кемерово";
+if (selectElement.value == "Кемерово") {
+  getKemerovoDatas();
+}
+
+
+// Обработчик события изменения значения select
+selectElement.addEventListener("change", function() {
+  var selectedOption = selectElement.value;
+  
+  if(selectElement.value == "Новокузнецк"){
+    getNovokuznDatas();
+  }
+  else if (selectElement.value == "Кемерово") {
+    getKemerovoDatas();
+  }
+  // Обновляем текст на странице
+  textElement.textContent = selectedOption;
+  
+});
+
+
 var datas;
-getKemerovoDatas();
 function getKemerovoDatas(){
 switch (month) {
   case "Jan":
@@ -718,7 +744,7 @@ var nextPrayerTime = getNextPrayerTime(prayerTimes);
     var minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((duration % (1000 * 60)) / 1000);
 
-    countdownEl.textContent = `${hours} ч ${minutes} мин ${seconds} сек`;
+    countdownEl.textContent = `${hours} ч ${minutes} мин`;
   }
 };
 
