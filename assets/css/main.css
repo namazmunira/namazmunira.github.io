@@ -54,32 +54,32 @@ body {
 
 .namaz {
   color: aliceblue;
-  font-size: 80px;
+  font-size: 75px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-shadow: 3px 3px 3px black;
 }
 
 #countdown {
   color: yellow;
-  font-size: 7vw;
+  font-size: 75px;
   font-weight: bold;
-  margin-bottom: 20px;
-  margin-top: 50px;
+  margin-bottom: 15px;
+  margin-top: 40px;
   text-transform: uppercase;
   text-shadow: 4px 4px 4px rgb(77, 75, 75);
 }
 
 #currdate {
   color: aliceblue;
-  font-size: 70px;
+  font-size: 65px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-shadow: 3px 3px 3px black;
 }
 
 .stime {
-  font-size: 90px;
+  font-size: 85px;
   text-transform: unset;
   color: yellow;
   text-shadow: 4px 4px 4px rgb(77, 75, 75);
@@ -145,12 +145,12 @@ body {
 }
 
 .prayer_name {
-  font-size: 60px;
+  font-size: 55px;
 }
 
 .rasp_title{
   color: #184B5D;
-  font-size: 60px;
+  font-size: 55px;
 }
 
 .icon_time{
@@ -161,11 +161,11 @@ body {
 
 .city_name{
   color: yellow;
-  font-size: 45px;
+  font-size: 40px;
 }
 
 .local {
-  font-size: 80px;
+  font-size: 70px;
   color: #3bad59;
 }
 

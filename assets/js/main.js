@@ -1,8 +1,47 @@
+// Обработчик события загрузки страницы
+window.addEventListener("load", function() {
+
+  $("#myModal").modal("show");
+
+
+  $("#novokuznetsk").click(function() {
+    
+    textElement.textContent = "Новокузнецк";
+
+    var  now = moment();
+    getNovokuznDatas();
+    var formattedD = now.format('DD.MM');
+    prayerTimes = updateDatePrayer(formattedD);
+    nextPrayerTime =  getNextPrayerTime(prayerTimes);
+
+    $("#myModal").modal("hide");
+    $("#pageContent").show();
+
+
+  });
+
+  $("#kemerovo").click(function() {
+    
+    textElement.textContent = "Кемерово";
+
+    var  now = moment();
+    getKemerovoDatas();
+    var formattedD = now.format('DD.MM');
+    prayerTimes = updateDatePrayer(formattedD);
+    nextPrayerTime =  getNextPrayerTime(prayerTimes);
+
+    $("#myModal").modal("hide");
+    $("#pageContent").show();
+
+  });
+
+});
+
+
 
 var timeElement = document.getElementById('currtime');
 var dateElement = document.getElementById('currdate');
 
-var  now = moment();
 
 function updateDatetime() {  
   var  now = moment();
@@ -21,15 +60,8 @@ setInterval(updateDatetime, 1000);
 
 var month = moment().format("MMM");
 
-
-// Получаем элементы select
-var selectElement = document.getElementById("city");
 var textElement = document.getElementById("selectedCity");
 
-textElement.textContent = "Кемерово";
-if (selectElement.value == "Кемерово") {
-  getKemerovoDatas();
-}
 
 
 // Обработчик события изменения значения select
