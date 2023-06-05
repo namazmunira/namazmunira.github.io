@@ -14,41 +14,25 @@
 </head>
 
 <body>
-
-    <!-- HTML модального окна -->
-    <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Добро пожаловать!</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body city_name_select">
-          <p><strong>Выбирайте город:</strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="kemerovo">Кемерово</button>
-          <button type="button" class="btn btn-primary" id="novokuznetsk">Новокузнецк</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-  <div class="container-fluid" id="pageContent" style="display: none;">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-6 side_left">
-        <!-- <div class="row city_block">
+        <div class="row city_block">
           <div class="col-6 city_name_select">
               <strong>Выбирайте город:</strong>
           </div>
+
           <div class="col-6">
               <select class="form-select mt-3" id="city" style="font-size: 20px;">
                   <option value="Кемерово" selected>Кемерово</option>
                   <option value="Новокузнецк">Новокузнецк</option>
+                  <option value="Прокопьевск">Прокопьевск</option>
+                  <option value="Ленинск-Кузнецкий">Ленинск-Кузнецкий</option>
+                  <option value="Юрга">Юрга</option>
+
                 </select>
           </div>
-      </div> -->
+      </div>
         <div class="row">
             <div class="rasp_title">
                 Время намазов
@@ -145,8 +129,6 @@
    
 
     <!-- JS files -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <script src="./assets/js/main.js"></script>
 </body>
