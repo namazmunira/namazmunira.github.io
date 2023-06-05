@@ -6,6 +6,7 @@ var  now = moment();
 
 function updateDatetime() {  
   var  now = moment();
+
   var formattedTime = now.format('HH:mm:ss');
   var formattedDate = now.format('DD.MM.YYYY');
   timeElement.innerHTML = formattedTime;
