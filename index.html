@@ -18,12 +18,35 @@
     <div class="row">
       <div class="col-6 side_left">
         <div class="row city_block">
-          <div class="col-6 city_name_select">
+              <button class="btn btn-outline-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCity" aria-controls="offcanvasCity">
+                Города Кузбасса
+              </button>
+              
+              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCity" aria-labelledby="offcanvasCityLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title city_name_select" id="offcanvasCityLabel"><strong>Выбирайте город:</strong></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="col-6">
+                        <select class="form-select" id="city" style="font-size: 20px;">
+                            <option value="Кемерово" selected>Кемерово</option>
+                            <option value="Новокузнецк">Новокузнецк</option>
+                            <option value="Прокопьевск">Прокопьевск</option>
+                            <option value="Ленинск-Кузнецкий">Ленинск-Кузнецкий</option>
+                            <option value="Юрга">Юрга</option>
+                          </select>
+                    </div>
+                </div>
+              </div>
+
+
+          <!-- <div class="col-6 city_name_select">
               <strong>Выбирайте город:</strong>
           </div>
 
           <div class="col-6">
-              <select class="form-select mt-3" id="city" style="font-size: 20px;">
+              <select class="form-select" id="city" style="font-size: 20px;">
                   <option value="Кемерово" selected>Кемерово</option>
                   <option value="Новокузнецк">Новокузнецк</option>
                   <option value="Прокопьевск">Прокопьевск</option>
@@ -31,7 +54,7 @@
                   <option value="Юрга">Юрга</option>
 
                 </select>
-          </div>
+          </div> -->
       </div>
         <div class="row">
             <div class="rasp_title">
@@ -131,5 +154,7 @@
     <!-- JS files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
