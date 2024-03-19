@@ -1,160 +1,146 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <title>Время намазов</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="./assets/media/favicon.ico">
-  <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/fonts/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Время намазов</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="./assets/media/favicon.ico">
+    <link href="./assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-6 side_left">
-        <div class="row city_block">
-              <button class="btn btn-outline-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCity" aria-controls="offcanvasCity">
-                Города Кузбасса
-              </button>
-              
-              <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCity" aria-labelledby="offcanvasCityLabel">
-                <div class="offcanvas-header">
-                  <h5 class="offcanvas-title city_name_select" id="offcanvasCityLabel"><strong>Выбирайте город:</strong></h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="col-6">
-                        <select class="form-select" id="city" style="font-size: 20px;">
-                            <option value="Кемерово" selected>Кемерово</option>
-                            <option value="Новокузнецк">Новокузнецк</option>
-                            <option value="Прокопьевск">Прокопьевск</option>
-                            <option value="Ленинск-Кузнецкий">Ленинск-Кузнецкий</option>
-                            <option value="Юрга">Юрга</option>
-                          </select>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 side_left">
+                <div class="row city_block">
+                    <button class="btn btn-outline-warning" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasCity" aria-controls="offcanvasCity">
+                        Города Кузбасса
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCity"
+                        aria-labelledby="offcanvasCityLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title city_name_select" id="offcanvasCityLabel"><strong>Выбирайте
+                                    город:</strong></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="col-6">
+                                <select class="form-select" id="city" style="font-size: 20px;">
+                                    <option value="Кемерово" selected>Кемерово</option>
+                                    <option value="Новокузнецк">Новокузнецк</option>
+                                    <option value="Прокопьевск">Прокопьевск</option>
+                                    <option value="Ленинск-Кузнецкий">Ленинск-Кузнецкий</option>
+                                    <option value="Юрга">Юрга</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
-              </div>
-
-
-          <!-- <div class="col-6 city_name_select">
-              <strong>Выбирайте город:</strong>
-          </div>
-
-          <div class="col-6">
-              <select class="form-select" id="city" style="font-size: 20px;">
-                  <option value="Кемерово" selected>Кемерово</option>
-                  <option value="Новокузнецк">Новокузнецк</option>
-                  <option value="Прокопьевск">Прокопьевск</option>
-                  <option value="Ленинск-Кузнецкий">Ленинск-Кузнецкий</option>
-                  <option value="Юрга">Юрга</option>
-
-                </select>
-          </div> -->
-      </div>
-        <div class="row">
-            <div class="rasp_title">
-                Время намазов
+                <div class="row">
+                    <div class="rasp_title">
+                        Время намазов
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time col-2">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Фаджр: <strong class="stime" id="fajr"></strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time col-2">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Восход: <strong class="stime" id="vosxod"></strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time col-2">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Зухр: <strong class="stime" id="zuhr"></strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Аср: <strong class="stime" id="asr"></strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Магриб: <strong class="stime" id="magrib"></strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="prayer_card">
+                        <span class="icon_time">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </span>
+                        <span class="prayer_name">
+                            Иша: <strong class="stime" id="isha"></strong>
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time col-2">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Фаджр: <strong class="stime" id="fajr"></strong>
-                </span>    
-            </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time col-2">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Восход: <strong class="stime" id="vosxod"></strong>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time col-2">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Зухр: <strong class="stime" id="zuhr"></strong>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Аср: <strong class="stime" id="asr"></strong>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Магриб: <strong class="stime" id="magrib"></strong>
-                </span>
-            </div>
-        </div>
-        <div class="row">
-            <div class="prayer_card">
-                <span class="icon_time">
-                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                </span>
-                <span class="prayer_name">
-                    Иша: <strong class="stime" id="isha"></strong>
-                </span>
-            </div>
-        </div>
-
-      </div>
-      <div class="col-6 side_right">
-        <div class="row">
-            <div>
-                <div id="currtime"></div>
-            </div>
-        </div>
-        <div class="row">
-          <div>
-              <i class="fa fa-map-marker local" aria-hidden="true"></i>
-              <div class="city_name" id="selectedCity"></div>
-          </div>
-        </div>
-        <div>
-            <div class="col">
-                <div id="currdate"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div>
-                <div class="namaz" id="nam">До следущего намаза:
-                    <div id="countdown"></div>
+            <div class="col-lg-6 col-md-12 side_right">
+                <div class="row">
+                    <div>
+                        <div id="currtime"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <i class="fa fa-map-marker local" aria-hidden="true"></i>
+                        <div class="city_name" id="selectedCity"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="col">
+                        <div id="currdate"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <div class="namaz" id="nam">До следующего намаза:
+                            <div id="countdown"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
-    </div>
-   
 
-    <!-- JS files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+        <!-- JS files -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+        <script src="./assets/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

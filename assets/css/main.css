@@ -5,27 +5,16 @@
   font-family: 'Comfortaa', cursive;
 }
 
-a { 
-  text-decoration: none; /* Отменяем подчеркивание у ссылки */
-} 
+a {
+  text-decoration: none;
+  /* Отменяем подчеркивание у ссылки */
+}
+
 
 body {
-  font-family: Arial, sans-serif;
   font-size: 24px;
   text-align: center;
   margin: 0;
-  /* background-color: #000000;
-  color: #F5F5F5; */
-
-}
-
-.bgvideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -9999;
 }
 
 #currtime-section {
@@ -48,8 +37,6 @@ body {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  /* transition: color 0.5s ease-in-out;
-      animation: slide 2s infinite; */
 }
 
 .namaz {
@@ -108,10 +95,10 @@ body {
 }
 
 .city {
-    background-color: #3bad59;
+  background-color: #3bad59;
 }
 
-.txt_city{
+.txt_city {
   font-size: 110px;
 }
 
@@ -119,20 +106,12 @@ body {
   font-size: 90px;
 }
 
-
-/*  ---- new styles --- */
-
-/* @font-face {
-  font-family: "Comfortaa Regular";
-  src: url("../fonts/Comfortaa-Regular.ttf");
-} */
-
-.side_left{
+.side_left {
   background-color: #F5F5F5;
   color: #ffffff;
 }
 
-.side_right{
+.side_right {
   background-color: #124658;
   /* border-radius: 15px 0 0 15px; */
 }
@@ -148,18 +127,18 @@ body {
   font-size: 55px;
 }
 
-.rasp_title{
+.rasp_title {
   color: #184B5D;
   font-size: 55px;
 }
 
-.icon_time{
+.icon_time {
   font-size: 50px;
   /* margin: 0 15px 0 0; */
   text-align: start;
 }
 
-.city_name{
+.city_name {
   color: yellow;
   font-size: 40px;
 }
@@ -169,48 +148,19 @@ body {
   color: #3bad59;
 }
 
-.city_block{
+.city_block {
   background-color: #184b5de5;
   padding: 15px;
 }
-.city_name_select{
+
+.city_name_select {
   font-size: 30px;
 
 }
 
-/* Media Queries for Responsive Design */
+/* Стили для ТВ 55 дюймов */
+@media screen and (min-width: 1281px) {
+  /* Здесь вы определяете стили, которые будут применяться только к ТВ 55 */
+  /* Например, увеличение размера шрифта */
 
-/* Медиа-запрос для разрешения 1920x1080 */
-@media screen and (min-width: 1920px)  {
-    body {
-        font-size: 36px; /* Увеличиваем размер шрифта для разрешения 1920x1080 */
-    }
-
-    #currtime {
-        font-size: 10vw; /* Увеличиваем размер шрифта текущего времени для разрешения 1920x1080 */
-    }
-
-    /* Дополнительные стили для других элементов на больших экранах */
-}
-
-/* Медиа-запрос для маленьких устройств, например, мобильных телефонов */
-@media screen and (max-width: 768px) {
-    body {
-        font-size: 18px; /* Уменьшаем размер шрифта для мобильных устройств */
-    }
-
-    #currtime {
-        font-size: 6vw; /* Уменьшаем размер шрифта текущего времени для маленьких экранов */
-    }
-}
-
-/* Медиа-запрос для больших устройств, таких как телевизоры */
-@media screen and (min-width: 1200px) {
-    body {
-        font-size: 32px; /* Увеличиваем размер шрифта для больших экранов */
-    }
-
-    #currtime {
-        font-size: 8vw; /* Увеличиваем размер шрифта текущего времени для больших экранов */
-    }
 }
