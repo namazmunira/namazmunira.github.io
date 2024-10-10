@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\js"
   ],
-  "SelectedNode": "\\C:\\Users\\isomadinow\\Source\\Repos\\namazmunira.github.io",
+  "SelectedNode": "\\assets\\js\\main.js",
   "PreviewInSolutionExplorer": false
 }
