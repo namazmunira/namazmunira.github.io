@@ -4,7 +4,7 @@ from datetime import datetime
 
 data = {}
 
-with open('code_converter_prayer_time/data.csv', encoding='utf-8') as f:
+with open('data.csv', encoding='utf-8') as f:
     reader = csv.reader(f, delimiter='\t')
     for row in reader:
         if len(row) > 0:  # Проверяем, что строка не пустая
@@ -37,5 +37,5 @@ with open('code_converter_prayer_time/data.csv', encoding='utf-8') as f:
 formatted_data = json.dumps(data, ensure_ascii=False)
 
 # Записываем отформатированные данные в файл JSON
-with open('code_converter_prayer_time/file.json', 'w', encoding='utf-8') as f:
+with open('file.json', 'w', encoding='utf-8') as f:
     f.write(formatted_data)
