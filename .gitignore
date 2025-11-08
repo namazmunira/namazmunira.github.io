@@ -61,3 +61,55 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+# === Laravel / PHP ===
+/vendor/
+.env
+.env.*
+*.key
+Homestead.json
+Homestead.yaml
+.phpunit.result.cache
+/.phpunit.cache/
+.phpactor.json
+/storage/*.key
+/storage/pail
+/storage/debugbar/
+bootstrap/cache/*.php
+/public/storage
+
+# === Filament / Frontend build ===
+/public/build/
+/public/hot
+/node_modules/
+/vite.config.ts.timestamp*
+/pnpm-lock.yaml
+/yarn.lock
+/package-lock.json
+
+# === IDE / Editor ===
+/.idea/
+/.vscode/
+/.fleet/
+/.zed/
+
+*.iml
+
+# === Composer / Tooling ===
+/composer.lock
+/auth.json
+
+# === Logs & temp ===
+/*.log
+/storage/logs/*.log
+/storage/framework/cache/*.php
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*.php
+/storage/temp/
+
+/database/*.sqlite
+/database/seeders/*.bak
+
+/.docker/
+/docker-compose.override.yml
